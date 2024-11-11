@@ -14,8 +14,7 @@ class PlayerReader:
                             player_dict["assists"],
                             player_dict["goals"],
                             player_dict["team"],
-                            player_dict["games"],
-                            player_dict["id"])
+                            player_dict["games"])
             
             players.append(player)
 
@@ -27,9 +26,12 @@ class PlayerStats:
 
     def top_scorers_by_nationality(self, nationality):
         return [player for player in self.players if player.nationality == nationality]
+    
+    def get_available_nationalities(self):
+        return sorted(set([player.nationality for player in self.players]))
 
 class Player:
-    def __init__(self, name, nationality, assists, goals, team, games, id):
+    def __init__(self, name, nationality, assists, goals, team, games):
         self.name = name
         self.nationality = nationality
         self.assists = assists
