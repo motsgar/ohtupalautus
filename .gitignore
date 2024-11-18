@@ -2,3 +2,7 @@ __pycache__
 .pytest_cache
 .coverage
 htmlcov
+selenium-screenshot-*.png
+report.html
+output.xml
+log.html
